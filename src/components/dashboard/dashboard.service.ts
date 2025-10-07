@@ -1,9 +1,15 @@
 import { Injectable } from '@nestjs/common';
 import { CreateDashboardDto } from './dto/create-dashboard.dto';
 import { UpdateDashboardDto } from './dto/update-dashboard.dto';
+import { InjectRepository } from '@nestjs/typeorm';
+import { Dashboard } from './entities/dashboard.entity';
+import { Repository } from 'typeorm';
 
 @Injectable()
 export class DashboardService {
+  // constructor(
+  //   @InjectRepository(Dashboard) 
+  // private dashboardRepository: Repository<Dashboard>) { }
   create(createDashboardDto: CreateDashboardDto) {
     return 'This action adds a new dashboard';
   }

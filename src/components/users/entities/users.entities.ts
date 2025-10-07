@@ -1,19 +1,28 @@
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-@Entity('dashboards')
-export class Dashboard {
+@Entity('users')
+export class Users {
     @PrimaryGeneratedColumn()
     id: number;
+    @Column()
+    username: string;
+    @Column()
+    email: string;
+    @Column()
+    user_password: string;
 
     @Column()
-    title: string;
+    photo: string;
 
     @Column()
-    description: string;
+    background_photo: string;
+
+    @Column()
+    frame: string;
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
-    createdAt: Date;
+    created_at: Date;
 
     @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP', onUpdate: 'CURRENT_TIMESTAMP' })
-    updatedAt: Date;
+    updated_at: Date;
 }
