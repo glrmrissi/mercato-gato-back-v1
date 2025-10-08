@@ -3,13 +3,10 @@ import { UsersService } from 'src/components/users/users.service';
 
 @Injectable()
 export class AuthService {
-    constructor(private usersService: UsersService) { }
+  constructor(private readonly usersService: UsersService) {}
 
-    async validateUser(username: string, pass: string): Promise<any> {
-        const user = await this.usersService.findOne(username);
-        if (user && user.password === pass) {
-            return user;
-        }
-        return null;
-    }
+  async validateUser(username: string, pass: string): Promise<boolean> {
+    const user = await this.usersService.findOne(username);
+    return !!(user && user.user_password === pass);
+  }
 }
