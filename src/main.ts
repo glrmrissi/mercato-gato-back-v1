@@ -15,7 +15,7 @@ async function bootstrap() {
   SwaggerModule.setup('api', app, document);
   
   await app.listen(process.env.PORT ?? 3000);
-  console.log(`🎃 Application is running on:  \x1b[35mhttp://localhost:${process.env.PORT ?? 3000}\x1b[0m
+  console.log(`💻 Application is running on:  \x1b[35mhttp://localhost:${process.env.PORT ?? 3000}\x1b[0m
 ----------------------------------------------------------`); 
   console.log(`📜 Documentation is running on:  \x1b[32mhttp://localhost:${process.env.PORT ?? 3000}/api\x1b[0m`); 
 }

@@ -14,7 +14,7 @@ import { WatchlistModule } from './components/watchlist/watchlist.module';
 
 
 @Module({
-  imports: [ AuthModule, UsersModule,
+  imports: [ UsersModule,
     TypeOrmModule.forRoot({
         type: 'postgres',
         host: process.env.DB_HOST,
@@ -24,10 +24,11 @@ import { WatchlistModule } from './components/watchlist/watchlist.module';
         database: process.env.DB_NAME,
         entities: [],
         autoLoadEntities: true,
-        synchronize: process.env.ENV_DEVELOPMENT === "development",
+        // synchronize: process.env.ENV_DEVELOPMENT === "development",
         // logging: true,
     }),
     HomeModule,
+    UsersModule,
     RegisterCatModule,
     RegisterModule,
     WatchlistModule, 
