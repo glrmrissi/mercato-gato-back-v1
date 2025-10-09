@@ -14,7 +14,7 @@ import { WatchlistModule } from './components/watchlist/watchlist.module';
 
 
 @Module({
-  imports: [ AuthModule, UsersModule,
+  imports: [ UsersModule,
     TypeOrmModule.forRoot({
         type: 'postgres',
         host: process.env.DB_HOST,
