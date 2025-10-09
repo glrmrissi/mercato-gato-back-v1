@@ -2,9 +2,10 @@ CREATE TABLE users (
 	id SERIAL PRIMARY KEY,
 	username VARCHAR(50) NOT NULL UNIQUE,
 	email VARCHAR(250) NOT NULL UNIQUE,
-	photo TEXT,
-	background_image TEXT,
-	frame TEXT,
+	user_password VARCHAR(127) NOT NULL,
+	photo TEXT NULL,
+	background_image TEXT NULL,
+	frame TEXT NULL,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
 	updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
