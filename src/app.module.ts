@@ -4,17 +4,17 @@ import { AppService } from './app.service';
 import { DashboardModule } from './components/dashboard/dashboard.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
-import { UsersService } from './components/users/users.service';
 import { UsersModule } from './components/users/users.module';
 import { HomeModule } from './components/home/home.module';
 import { RegisterCatModule } from './components/register-cat/register-cat.module';
 import { RegisterModule } from './components/register/register.module';
-import { Users } from './components/users/entities/users.entities';
 import { WatchlistModule } from './components/watchlist/watchlist.module';
 
 
 @Module({
-  imports: [ UsersModule,
+  imports: [ 
+    AuthModule,
+    UsersModule,
     TypeOrmModule.forRoot({
         type: 'postgres',
         host: process.env.DB_HOST,
@@ -28,7 +28,6 @@ import { WatchlistModule } from './components/watchlist/watchlist.module';
         // logging: true,
     }),
     HomeModule,
-    UsersModule,
     RegisterCatModule,
     RegisterModule,
     WatchlistModule, 
