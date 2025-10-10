@@ -36,13 +36,4 @@ export class UsersService {
     const user = this.userRepository.create({ username, email, user_password });
     return await this.userRepository.save(user);
   }
-
-  async login({ email, user_password }: LoginDto): Promise<boolean> {
-    if (email && user_password) {
-      const token = "Created token"
-      return true
-    } else {
-      return false
-    }
-  }
 }
